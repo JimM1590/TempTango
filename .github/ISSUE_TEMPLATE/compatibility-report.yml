@@ -1,0 +1,148 @@
+name: Compatibility report
+description: Report whether TempTango works with your Jeep Cherokee KL and Android head unit
+title: "[Compatibility] "
+labels:
+  - compatibility
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing TempTango. Please fill out as much as you can so we can compare your setup with known-working configurations.
+
+  - type: input
+    id: model_year
+    attributes:
+      label: Jeep model year
+      placeholder: "2017"
+    validations:
+      required: true
+
+  - type: input
+    id: trim
+    attributes:
+      label: Trim
+      placeholder: "Latitude / Limited / Trailhawk / etc."
+    validations:
+      required: true
+
+  - type: input
+    id: head_unit
+    attributes:
+      label: Android head unit
+      description: Include brand/model if known.
+      placeholder: "XYAuto-style Android head unit"
+    validations:
+      required: true
+
+  - type: input
+    id: android_version
+    attributes:
+      label: Android version
+      placeholder: "Android 11"
+    validations:
+      required: false
+
+  - type: input
+    id: canbus_decoder
+    attributes:
+      label: CANBUS decoder brand/model
+      description: Examples: Raise, RZC, Hiworld, SimpleSoft. Include model number if visible.
+      placeholder: "Raise / RZC"
+    validations:
+      required: true
+
+  - type: input
+    id: canbus_profile
+    attributes:
+      label: CANBUS profile selected in factory settings
+      placeholder: "Raise_16_18_Cherokee_Hi"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: hvac_type
+    attributes:
+      label: HVAC type
+      options:
+        - Dual-zone automatic
+        - Single-zone
+        - Other / unsure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: heated_seats
+    attributes:
+      label: Heated seats
+      options:
+        - "Yes"
+        - "No"
+        - "Unsure"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: heated_wheel
+    attributes:
+      label: Heated steering wheel
+      options:
+        - "Yes"
+        - "No"
+        - "Unsure"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: working_controls
+    attributes:
+      label: TempTango functions that work
+      description: Check everything that works correctly.
+      options:
+        - label: Driver temperature
+        - label: Passenger temperature
+        - label: Fan speed
+        - label: Airflow modes
+        - label: A/C
+        - label: AUTO
+        - label: Recirculation
+        - label: Front defrost
+        - label: Rear defrost
+        - label: DUAL / SYNC
+        - label: Driver heated seat
+        - label: Passenger heated seat
+        - label: Heated steering wheel
+        - label: Physical HVAC controls update TempTango correctly
+
+  - type: textarea
+    id: problems
+    attributes:
+      label: Problems or incorrect behavior
+      description: Describe anything that does not work, displays incorrectly, or behaves differently from the stock HVAC interface.
+      placeholder: "Example: passenger temperature changes in the vehicle but TempTango does not update."
+    validations:
+      required: false
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics / log
+      description: If possible, attach a TempTango diagnostics export here. Please do not include personal information.
+      placeholder: "Drag and drop the exported log file here, or paste relevant details."
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      placeholder: "Anything else that may help reproduce your setup."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Test confirmation
+      options:
+        - label: I tested TempTango while parked or otherwise in a safe situation.
+          required: true
