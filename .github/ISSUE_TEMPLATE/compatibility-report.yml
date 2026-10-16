@@ -46,7 +46,7 @@ body:
     id: canbus_decoder
     attributes:
       label: CANBUS decoder brand/model
-      description: Examples: Raise, RZC, Hiworld, SimpleSoft. Include model number if visible.
+      description: "Examples: Raise, RZC, Hiworld, SimpleSoft. Include model number if visible."
       placeholder: "Raise / RZC"
     validations:
       required: true
