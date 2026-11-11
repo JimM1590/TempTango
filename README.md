@@ -10,7 +10,7 @@ The current development release candidate is **TempTango 2.1 RC03 Mini** (`TempT
 
 RC03 adds **TempTango Mini**, a compact quick-control HVAC interface designed to be launched by DashHopper while another app remains visible.
 
-RC03 is still a **prerelease / release candidate**. Emulator validation is complete for the Mini window behavior, upgrade path, OPEN TT behavior, dragging, resizing, and window persistence. Final Jeep vehicle acceptance is still pending.
+RC03 remains a **prerelease / release candidate** while broader compatibility feedback is collected. TempTango Mini has now been successfully tested on the development Jeep, including launch through DashHopper and operation of the vehicle's HVAC controls.
 
 The existing full TempTango interface has been vehicle-tested on:
 
@@ -139,21 +139,22 @@ TempTango currently depends on the Android-side interfaces exposed by the Raise/
 
 Other CANBUS vendors such as Hiworld, SimpleSoft, and others may use different Android interfaces and are **not confirmed compatible yet**.
 
-## Important RC03 testing note
+## RC03 vehicle validation
 
-RC03 Mini has not yet completed Jeep vehicle acceptance.
+RC03 Mini has been successfully tested on the development vehicle:
 
-The following still require physical vehicle validation:
+- **2017 Jeep Cherokee KL**
+- Dual-zone HVAC
+- Heated front seats
+- Heated steering wheel
+- Aftermarket Android 11 head unit
+- Raise / RZC CANBUS configuration
+- XYAuto-style CANBUS software stack
+- Stock / unmodified Cherokee P1 plugin
 
-- Actual Mini HVAC command operation on the Jeep
-- XYAuto Activity-window behavior on the head unit
-- Mini coexistence over Android Auto
-- Mini coexistence over standalone Waze
-- ACC sleep/wake behavior
+On this configuration, Mini launches through DashHopper and operates the Jeep's HVAC controls through the existing TempTango backend.
 
-The earlier DashHopper frog-test APK successfully validated the public quick-control launch contract over Android Auto and standalone Waze, but that does **not** count as validation of the final RC03 Mini implementation.
-
-Please test while parked first and keep access to the radio's original HVAC interface until you know TempTango works correctly on your setup.
+RC03 remains a prerelease because other Jeep model years, head units, Android/firmware builds, CANBUS decoders, and vehicle option combinations may behave differently. Please test while parked first and keep access to the radio's original HVAC interface until TempTango has been verified on your setup.
 
 ## RC03 build details
 
@@ -201,7 +202,11 @@ Published releases are available from the repository's **Releases** section:
 
 https://github.com/JimM1590/TempTango/releases
 
-At the time of this README update, **RC03 Mini has not yet been published as a GitHub Release**. The existing published RC02 release remains available while RC03 completes vehicle acceptance and release packaging.
+The current published prerelease is **TempTango 2.1 RC03 Mini**:
+
+https://github.com/JimM1590/TempTango/releases/tag/v2.1-RC03-Mini
+
+Download `TempTango_Mini_RC03.apk` from the release assets and verify its SHA-256 against the value above.
 
 ## Feedback wanted
 
@@ -229,7 +234,6 @@ Compatibility reports from other **Raise/RZC-equipped Cherokee KLs** are especia
 
 ## Known limitations
 
-- RC03 Mini vehicle acceptance is still pending.
 - Explicit Mini seat-level selection requires fresh verified RX state. Requests use the existing seat-cycle command and wait for RX confirmation between steps.
 - Cached values may be displayed while awaiting fresh RX; stale seat/defrost states are not presented as verified active selections.
 - Mini moves and resizes its own Activity window only.
